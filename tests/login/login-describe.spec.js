@@ -1,16 +1,16 @@
-import { testBase, expect, CommonUI } from "../../utilities/docuport-ui-utilities";
-import { LoginPage } from "../../pages/LoginPage";
-import { HomePage } from "../../pages/HomePage";
-import test from "node:test";
+import { testBase, expect, CommonUI } from '../../utilities/docuport-ui-utilities';
+import { LoginPage } from '../../pages/LoginPage';
+import { HomePage } from '../../pages/HomePage';
 
 testBase.describe("Login - describe - beforeEach", () => {
 
       let homePage
       let loginPage 
 
-    test.beforeEach(async ({ page }) => {
-        homePage = new HomePage(page)
-        loginPage = new LoginPage(page)
+    // .beforeEach will be executed before each test 
+    testBase.beforeEach (async({page}) => {
+        loginPage = new LoginPage (page)
+        homePage = new HomePage (page); 
     })
 
     testBase("Client Login", { tag: "@smoke" }, async ({ page }) => {

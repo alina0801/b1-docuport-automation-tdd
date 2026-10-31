@@ -31,10 +31,11 @@ export class HomePage extends BasePage {
         const roleElement = this.page.getByText(role, { exact: true });
         const actualText = await roleElement.innerText();
         //this is the line where it is validated
-        await expect(actualText.toLowerCase()).toBe(role.toLowerCase());
+        expect(actualText.toLowerCase()).toBe(role.toLowerCase());
     }
 
-    async getLeftMenuItems(){
-        const texts = await this.leftMenuItems.allInnerText();
+      async getLeftMenuItems (){
+        const texts = await this.leftMenuItems.allInnerTexts(); 
+        return texts.map(eachText => eachText.trim()); 
     }
 }

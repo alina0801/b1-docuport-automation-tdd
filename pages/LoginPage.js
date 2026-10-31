@@ -31,8 +31,6 @@ export class LoginPage extends BasePage {
     passwordInputBox = this.locator("//label[text()='Password']");
     loginButton = this.locator("//button[@type='submit']");
 
-
-
     // REUSABLE METHODS
     async enterUsername(username) {
         await this.usernameInputBox.fill(username);
